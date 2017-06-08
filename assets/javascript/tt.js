@@ -29,10 +29,12 @@ $("#submitButton").on("click", function (){
 	trainName = $("#trainName").val().trim();
 	trainDestination = $("#trainDestination").val().trim();
 	trainFrequency = $("#trainFrequency").val().trim();
-		console.log(trainName);
-		console.log(trainDestination);
-		console.log(trainFrequency);
-		
+		// console.log(trainName);
+		// console.log(trainDestination);
+		// console.log(trainFrequency);
+	//This is where the minutes.js thing that you don't understand yet comes into play
+	//User input gets converted!!!!!!!!!
+
 	//Push the new data to Firebase
 	database.ref().push({
 		trainName: trainName,
@@ -40,4 +42,25 @@ $("#submitButton").on("click", function (){
 		trainFrequency: trainFrequency
 	});
 
+	//Clear the input fields
+	$("#trainName").val("");
+	$("#trainDestination").val("");
+	// $("#trainTime").val("");
+	$("#trainFrequency").val("");
 });
+
+//On a value change in Firebase, that value will be pushed into the table
+database.ref().on("child_added", function (childSnapshot){
+	console.log(childSnapshot.val().trainName);
+	console.log(childSnapshot.val().trainDestination);
+	console.log(childSnapshot.val().trainFrequency);
+
+
+	//Add these items to the table, after the last items using .after()
+	$("#trainTable tr:last").after("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().trainDestination + "</td><td>" + childSnapshot.val().trainFrequency + "</td></tr>");
+
+	//Function to handle any errors that may occur
+},function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+});
+

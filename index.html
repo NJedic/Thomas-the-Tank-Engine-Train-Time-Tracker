@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Train Times</title>
+
+<!-- Link to Reset Css -->
+<link rel = "stylesheet" type="text/css" href="assets/css/reset.css">	
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- 	Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Link to Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<!-- Link to Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Baloo|Luckiest+Guy" rel="stylesheet">
+<!-- Link to Relative CSS -->
+<link rel = "stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<!-- Jumbotron Header -->
+	<div class="jumbotron">
+		<h1 id="title">Train Times</h1>
+	</div>
+
+	<!-- Main Container -->
+	<div class="container">
+		<!-- First Row -->
+		<div class="row">
+			<!-- Panel to Display Train Data -->
+			<div class="panel panel-default">
+			  <!-- Panel Header -->
+			  <div class="panel-heading" id="panelHeader1">Current Train Schedule</div>
+			  <!-- Table to Display Train Data-->
+			  <table class="table table-hover">
+			  	<tr>
+				    <th>Train Name</th>
+				    <th>Destination</th> 
+				    <th>Frequency</th>
+				    <th>Next Arrival</th>
+				    <th>Minutes Away</th>
+				  </tr>
+			  </table>
+			</div>
+		</div>
+
+		<!-- Second Row -->
+		<div class="row">
+			<!-- Panel to Hold the Form to Capture Train Data -->
+			<div class="panel panel-default">
+				<!-- Panel Header -->
+		  	<div class="panel-heading" id="panelHeader2">Add Train
+		  	</div>
+		  	<!-- Form to capture Train Data -->
+		  	<div class="panel-body">
+		    	<form>
+		    		<!-- Train Name Capture -->
+  					<div class="form-group">
+					    <label for="train_Name">Train Name:</label>
+					    <input type="text" class="form-control" id="trainName">
+					  </div>
+					  <!-- Train Destination Capture -->
+					  <div class="form-group">
+					    <label for="train_Destination">Destination:</label>
+					    <input type="text" class="form-control" id="trainDestination">
+  					</div>
+  					<!-- First Train Time Capture -->
+  					<div class="form-group">
+					    <label for="train_Time">First Train Time:</label>
+					    <input type="text" class="form-control" id="trainTime" placeholder="HH:MM Military Time">
+					  </div>
+					  <!-- Frequency Capture -->
+					  <div class="form-group">
+					    <label for="train_Frequency">Frequency:</label>
+					    <input type="text" class="form-control" id="trainFrequency" placeholder="In Minutes">
+					  </div>
+  					<button type="submit" class="btn btn-default" id="submitButton">Submit</button>
+					</form>
+		  	</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Link to relative JavaScript -->
+<script type="text/javascript" src="assets/javascript/tt.js"></script>
+</body>
+</html>

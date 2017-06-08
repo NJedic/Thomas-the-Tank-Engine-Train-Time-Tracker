@@ -1,0 +1,58 @@
+/*Jumbotron*/
+.jumbotron{
+	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/c5/a2/4b/c5a24bcfa136bee083abf332710687cd.jpg");
+	background-size: cover;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+/*Jumbotron Title*/
+#title{
+	text-align: center;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 72pt;
+	color: white;
+	text-shadow: 4px 4px black;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+/*Main Content*/
+body{
+	background-color: #68c3ed;
+}
+/*Panel Headers*/
+#panelHeader1, #panelHeader2{
+	background-image: none;
+	background-color: #009dde;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 18pt;
+	color: white;
+	text-shadow: 1px 1px black;
+}
+/*Train Data Displayed Table Header*/
+th{
+	font-family: 'Baloo', cursive;
+	font-size: 12pt;
+
+}
+/*Train Data Display Table Content*/
+td{
+	font-family: 'Baloo', cursive;
+	color:#0c9045;
+}
+/*Train Data Capture Headers*/
+label{
+	font-family: 'Baloo', cursive;
+	font-size: 12pt;
+	font-weight: normal;
+}
+/*Submit Button*/
+#submitButton{
+	background-image: none;
+	background-color: #ffd203;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 16pt;
+	color: white;
+	text-shadow: 1px 1px black;
+
+}

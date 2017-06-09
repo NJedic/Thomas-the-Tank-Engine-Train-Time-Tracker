@@ -36,6 +36,7 @@ $("#submitButton").on("click", function (){
 		// console.log(trainFrequency);
 	
 	//Calculate the time of next arrival and how many minutes away the next train is using moments.js
+		//Massive shout out to my long-suffering father for explaining all of this
 	//Getting one number string to work with
 	var oGConverstion = moment(trainTime, "HH:mm").subtract(1, "years");
   	// console.log(oGConverstion);
@@ -45,8 +46,10 @@ $("#submitButton").on("click", function (){
   //Figuring out the time remaining
   var evenMoreConverting = trainFrequency - (Math.floor(stillConverting) % trainFrequency);
   	// console.log(evenMoreConverting);
+  //Figuring out the next train to arrive
   nextArrival = stillConverting > 0 ? moment().add(evenMoreConverting, 'minutes' ) : moment(trainTime, "HH:mm") ;
   	// console.log(moment(nextArrival).format("HH:mm"));
+  //Figuring out how many minutes away that is from right now
   minutesAway = Math.ceil(moment.duration(moment(nextArrival).diff(moment()), 'milliseconds').asMinutes());
   	// console.log(minutesAway);
 
@@ -73,7 +76,6 @@ database.ref().on("child_added", function (childSnapshot){
 	// console.log(childSnapshot.val().trainFrequency);
 	// console.log(childSnapshot.val().nextArrival);
 	// console.log(childSnapshot.val().minutesAway);
-
 
 	//Add these items to the table, after the last items using .after()
 	$("#trainTable tr:last").after("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().trainDestination + "</td><td>" + childSnapshot.val().trainFrequency + "</td><td>" + childSnapshot.val().nextArrival + "</td><td>" + childSnapshot.val().minutesAway + "</td></tr>");

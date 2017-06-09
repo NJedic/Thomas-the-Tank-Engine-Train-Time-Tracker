@@ -36,7 +36,7 @@ $("#submitButton").on("click", function (){
 		// console.log(trainFrequency);
 	
 	//Calculate the time of next arrival and how many minutes away the next train is using moments.js
-		//Massive shout out to my long-suffering father for explaining all of this
+	
 	//Getting one number string to work with
 	var oGConverstion = moment(trainTime, "HH:mm").subtract(1, "years");
   	// console.log(oGConverstion);
